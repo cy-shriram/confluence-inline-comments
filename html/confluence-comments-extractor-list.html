@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Confluence Comments Extractor</title>
+  <style>
+        html,
+        body {
+            width:100%;
+            height:100%;
+            margin:0px;
+            padding:0px;
+            font-family:Helvetica, Arial;
+        }
+
+        body {
+            background:#ececec;
+        }
+
+        #heading, #heading2 {
+            margin-top: 2%;
+            text-align: center;
+            color: #335fa1;
+        }
+
+        #content {
+            display:block;
+            width: 100%;
+            margin-top: 5%;
+            margin-bottom: 2%;
+        }
+
+        #image {
+            display: block;
+            margin: 0 auto;
+        }
+
+        #image2 {
+            display: block;
+            margin: 0 auto;
+            padding-bottom: 2%;
+        }
+
+        #content p {
+            font-size:29px;
+            color:#535559;
+            text-align:center;
+            text-shadow:0px 2px 1px #fff;
+        }
+
+        #content a.me,
+        #content a.me:active,
+        #content a.me:visited,
+        #content a.me:hover {
+            display:inline-block;
+            width:60px;
+            height:28px;
+            font-size: 0;
+            text-shadow: none;
+            color: #294995;
+            background: url("../images/me.png") no-repeat;
+            background-size: 60px 28px;
+            vertical-align:middle;
+            text-decoration:none;
+        }
+
+        span.target-name {
+            font-weight: bold;
+        }
+
+        #content b, #content a {
+            font-weight:bold;
+            color:#335fa1;
+        }
+
+        #content div.footer {
+            margin-top: 80px;
+        }
+
+        #content div.footer > p {
+            color:#a4a4a4;
+            font-size:13px;
+        }
+
+        #content div.footer a {
+        text-decoration:none;
+        }
+  </style>
+</head>
+
+<body>
+    <h1 id="heading">Confluence Comments Extractor - List View</h1>
+    <div id="content">
+        <p>
+            Drag 
+            <a class="me" title="Drag me!" href="javascript: (function() {var a = document.querySelectorAll(&quot;.inline-comment-marker.valid, .comment-count-overlay&quot;);const output_xpath = '//*[@id=&quot;main&quot;]';const resolved_comments_view_btn_xpath = '//*[@id=&quot;view-resolved-comments&quot;]';const resolved_comments_close_btn_xpath = '//*[@id=&quot;resolved-dialog-close-button&quot;]';var i = 0;var output_div = document.createElement('div');var heading_span = document.createElement('span');heading_span.innerHTML = &quot;<h1>Inline Comments</h1>&quot;;output_div.appendChild(heading_span);if (a.length <= 0) {alert(&quot;No confluence comments found in this page...&quot;);return;}function process_resolved_comments(output_div) {document.evaluate(resolved_comments_view_btn_xpath, document).iterateNext().click();setTimeout(function() {const resolved_comments_div_xpath = '//*[@id=&quot;ic-resolved-comment-dialog&quot;]/div/div[2]';const resolved_comments_username_xpath = '//*[@id=&quot;ic-resolved-comment-dialog&quot;]/div/div[2]/div[i]/div[1]/div[1]/a[2]';const resolved_comments_text_xpath = '//*[@id=&quot;ic-resolved-comment-dialog&quot;]/div/div[2]/div[i]/div[1]/div[2]/div/blockquote';const resolved_comments_comment_xpath = '//*[@id=&quot;ic-resolved-comment-dialog&quot;]/div/div[2]/div[i]/div[1]/div[2]/div/p';const resolved_comments_link_xpath = '//*[@id=&quot;ic-resolved-comment-dialog&quot;]/div/div[2]/div[i]/div[1]/div[3]/ul';const resolved_comments_reply_div_xpath = '//*[@id=&quot;ic-resolved-comment-dialog&quot;]/div/div[2]/div[i]/div[2]';const resolved_comments_reply_username_xpath = '//*[@id=&quot;ic-resolved-comment-dialog&quot;]/div/div[2]/div[i]/div[2]/div[j]/div[1]/a[2]';const resolved_comments_reply_text_xpath = '//*[@id=&quot;ic-resolved-comment-dialog&quot;]/div/div[2]/div[i]/div[2]/div[j]/div[2]/div';var resolved_comments_div = document.evaluate(resolved_comments_div_xpath, document).iterateNext();var resolved_comments_count = resolved_comments_div.children.length;var comment_count = i;for (i = 1; i <= resolved_comments_count; i++) {var username = document.evaluate(resolved_comments_username_xpath.replace(/\[i\]/g, &quot;[&quot; + i + &quot;]&quot;), document).iterateNext().textContent;var comment_text = document.evaluate(resolved_comments_text_xpath.replace(/\[i\]/g, &quot;[&quot; + i + &quot;]&quot;), document).iterateNext().outerHTML;var comment = document.evaluate(resolved_comments_comment_xpath.replace(/\[i\]/g, &quot;[&quot; + i + &quot;]&quot;), document).iterateNext().innerHTML;var comment_link = document.evaluate(resolved_comments_link_xpath.replace(/\[i\]/g, &quot;[&quot; + i + &quot;]&quot;), document).iterateNext().lastElementChild.lastElementChild.getElementsByTagName(&quot;a&quot;)[0].href;var comment_div = document.createElement('div');comment_div.setAttribute('class', 'confluence-information-macro confluence-information-macro-information conf-macro output-block');comment_div.setAttribute('style', 'background-color:#ecfbf3;');comment_div.setAttribute('data-hasbody', 'true');comment_div_content = '<p class=&quot;title&quot;>' + 'Comment #' + (comment_count + 1) + ': Resolved</p>';comment_div_content += '<div class=&quot;confluence-information-macro-body&quot;>';comment_div_content += '<div style=&quot;margin:10px;&quot;><span>' + comment_text + '</span>';comment_div_content += '<p><a style=&quot;cursor: pointer;&quot; onclick=&quot;window.open(\'' + comment_link + '\');&quot;>Click here to view this comment</a></p></div>';comment_div_content += '<div style=&quot;margin:10px; margin-left:25px;&quot;><p style=&quot;font-style:italic;&quot;>' + username + ':</p>';comment_div_content += '<div style=&quot;margin:4px; margin-left:20px;&quot;>' + comment + '</div></div>';var reply_count = 0;var reply_count_div = document.evaluate(resolved_comments_reply_div_xpath.replace(/\[i\]/g, &quot;[&quot; + i + &quot;]&quot;), document).iterateNext();if (reply_count_div && reply_count_div.children) {reply_count = reply_count_div.children.length;}if (reply_count > 1) {comment_div_content += '<div style=&quot;margin-left:25px; margin-top:10px;&quot;><p style=&quot;font-weight:bold;&quot;>Replies:</p></div>';for (let j = 1; j <= reply_count; j++) {var reply_username = document.evaluate(resolved_comments_reply_username_xpath.replace(/\[i\]/g, &quot;[&quot; + i + &quot;]&quot;).replace(/\[j\]/g, &quot;[&quot; + j + &quot;]&quot;), document).iterateNext().textContent;var reply_comment = document.evaluate(resolved_comments_reply_text_xpath.replace(/\[i\]/g, &quot;[&quot; + i + &quot;]&quot;).replace(/\[j\]/g, &quot;[&quot; + j + &quot;]&quot;), document).iterateNext().innerHTML;if (j < reply_count) {comment_div_content += '<div style=&quot;margin:10px; margin-left:50px; margin-bottom:30px;&quot;><p style=&quot;font-style:italic;&quot;>' + reply_username + ':</p>';} else {comment_div_content += '<div style=&quot;margin:10px; margin-left:50px;&quot;><p style=&quot;font-style:italic;&quot;>' + reply_username + ':</p>';}comment_div_content += '<div style=&quot;margin:4px; margin-left:20px;&quot;>' + reply_comment + '</div></div>';}} else if (reply_count == 1) {comment_div_content += '<div style=&quot;margin-left:25px; margin-top:10px;&quot;><p style=&quot;font-weight:bold;&quot;>Replies:</p></div>';var reply_username = document.evaluate(resolved_comments_reply_username_xpath.replace(/\[i\]/g, &quot;[&quot; + i + &quot;]&quot;).replace(/\[j\]/g, &quot;&quot;), document).iterateNext().textContent;var reply_comment = document.evaluate(resolved_comments_reply_text_xpath.replace(/\[i\]/g, &quot;[&quot; + i + &quot;]&quot;).replace(/\[j\]/g, &quot;&quot;), document).iterateNext().innerHTML;comment_div_content += '<div style=&quot;margin:10px; margin-left:50px;&quot;><p style=&quot;font-style:italic;&quot;>' + reply_username + ':</p>';comment_div_content += '<div style=&quot;margin:4px; margin-left:20px;&quot;>' + reply_comment + '</div></div>';}comment_div_content += '</div>';comment_div.innerHTML = comment_div_content;output_div.appendChild(comment_div);comment_count++;}document.evaluate(resolved_comments_close_btn_xpath, document).iterateNext().click();var output_div_elem = document.evaluate(output_xpath, document).iterateNext();output_div_elem.appendChild(output_div);document.body.style.cursor = 'default';alert(&quot;Processed all inline comments !\n\nThe comments list has been added at the end of the page !!&quot;);window.location.href = '#comments-section';}, 1000);}function process_open_comments(output_div) {a[i].click();setTimeout(function() {const username_xpath = '//*[@id=&quot;content&quot;]/div[9]/div/div[1]/div[3]/div[1]/a[2]';const comment_xpath = '//*[@id=&quot;content&quot;]/div[9]/div/div[1]/div[3]/div[2]/div';const reply_container_xpath = '//*[@id=&quot;content&quot;]/div[9]/div/div[2]/div';const reply_username_xpath = '//*[@id=&quot;content&quot;]/div[9]/div/div[2]/div/div[x]/div[1]/a[2]';const reply_comment_xpath = '//*[@id=&quot;content&quot;]/div[9]/div/div[2]/div/div[x]/div[2]/div';var username = document.evaluate(username_xpath, document).iterateNext().textContent;var comment = document.evaluate(comment_xpath, document).iterateNext().innerHTML;var comment_div = document.createElement('div');comment_div.setAttribute('class', 'confluence-information-macro confluence-information-macro-information conf-macro output-block');comment_div.setAttribute('data-hasbody', 'true');var exit = false;var elem = a[i];var text = &quot;&quot;;do {if (elem.previousElementSibling) {text += elem.previousElementSibling.tagName + &quot; > &quot;;if (elem.previousElementSibling.tagName.toUpperCase().startsWith(&quot;H&quot;)) {elem = elem.previousElementSibling;exit = true;} else {elem = elem.previousElementSibling;}} else {elem = elem.parentElement;}} while (!exit);comment_div_content = '<p class=&quot;title&quot;>' + 'Comment #' + (i + 1) + ': Open</p>';comment_div_content += '<div class=&quot;confluence-information-macro-body&quot;>';comment_div_content += '<div style=&quot;margin:10px;&quot;><span>' + a[i].outerHTML + '</span>';comment_div_content += '<p>Section: <a href=&quot;#' + elem.id + '&quot;>' + elem.innerHTML + '</a></p></div>';comment_div_content += '<div style=&quot;margin:10px; margin-left:25px;&quot;><p style=&quot;font-style:italic;&quot;>' + username + ':</p>';comment_div_content += '<div style=&quot;margin:4px; margin-left:20px;&quot;>' + comment + '</div></div>';var replies = document.evaluate(reply_container_xpath, document).iterateNext().children.length;if (replies > 1) {comment_div_content += '<div style=&quot;margin-left:25px; margin-top:10px;&quot;><p style=&quot;font-weight:bold;&quot;>Replies:</p></div>';for (let j = 1; j <= replies; j++) {var reply_username = document.evaluate(reply_username_xpath.replace(&quot;[x]&quot;, &quot;[&quot; + j + &quot;]&quot;), document).iterateNext().textContent;var reply_comment = document.evaluate(reply_comment_xpath.replace(&quot;[x]&quot;, &quot;[&quot; + j + &quot;]&quot;), document).iterateNext().innerHTML;if (j < replies) {comment_div_content += '<div style=&quot;margin:10px; margin-left:50px; margin-bottom:30px;&quot;><p style=&quot;font-style:italic;&quot;>' + reply_username + ':</p>';} else {comment_div_content += '<div style=&quot;margin:10px; margin-left:50px;&quot;><p style=&quot;font-style:italic;&quot;>' + reply_username + ':</p>';}comment_div_content += '<div style=&quot;margin:4px; margin-left:20px;&quot;>' + reply_comment + '</div></div>';}} else if (replies == 1) {comment_div_content += '<div style=&quot;margin-left:25px; margin-top:10px;&quot;><p style=&quot;font-weight:bold;&quot;>Replies:</p></div>';var reply_username = document.evaluate(reply_username_xpath.replace(&quot;[x]&quot;, &quot;[&quot; + 1 + &quot;]&quot;), document).iterateNext().textContent;var reply_comment = document.evaluate(reply_comment_xpath.replace(&quot;[x]&quot;, &quot;[&quot; + 1 + &quot;]&quot;), document).iterateNext().innerHTML;comment_div_content += '<div style=&quot;margin:10px; margin-left:50px;&quot;><p style=&quot;font-style:italic;&quot;>' + reply_username + ':</p>';comment_div_content += '<div style=&quot;margin:4px; margin-left:20px;&quot;>' + reply_comment + '</div></div>';}comment_div_content += '</div>';comment_div.innerHTML = comment_div_content;output_div.appendChild(comment_div);i++;if (i < a.length) {setTimeout(process_open_comments, 500, output_div);} else {try {process_resolved_comments(output_div);} catch (e) {document.body.style.cursor = 'default';console.error(e);document.evaluate(resolved_comments_close_btn_xpath, document).iterateNext().click();alert(&quot;Processing failed !!!\n\n Please check browser's console for details...&quot;);}}}, 500);}try {document.body.style.cursor = 'progress';process_open_comments(output_div);} catch (e) {document.body.style.cursor = 'default';console.error(e);alert(&quot;Processing failed !!!\n\n Please check browser's console for details...&quot;);}})()">List - Confluence Comments</a> 
+            to your <b>bookmarks toolbar</b> <br/>
+            as shown below.
+        </p>
+    </div>
+    <img id="image" src="../images/drag_me.png"/>
+    <div id="content" style="margin-top: 3%;">
+        <p>
+            Once the bookmarklet is added, you can simply <b>click</b> on it <br/>
+            from the bookmarks bar when you are in the <b>confluence page</b>.
+        </p>
+    </div>
+    <h2 id="heading2">Output</h2>
+    <img id="image2" src="../images/confluence_comments_list.png"/>
+</body>
+
+</html>
