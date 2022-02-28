@@ -20,7 +20,9 @@ Getting a list of inline comments and the replies in confluence pages is a tedio
 
 ## Bookmarklets
 
-<a id="thelink" href="javascript: (function() {alert('Test');})()">Confluence Comments - List</a>
+[Test](javascript: (function() {alert('Test');})())
+
+[Test]("javascript: (function() {alert('Test');})()")
 
    This produces a list of comments and their replies as shown in the image below.
 
