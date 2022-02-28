@@ -46,7 +46,7 @@ In case of the table view, the table is pre-selected, so that you can copy (`Ctr
 
 ## Scripts
 
-The bookmarklets are based on javascripts. The scripts for the above bookmarlets can be found in the [/bookmarklets](./bookmarklets/) directory of this repo.
+The bookmarklets are based on javascripts. The scripts for the above bookmarlets can be found in the [/bookmarklets](https://github.com/cy-shriram/confluence-inline-comments/blob/master/bookmarklets/) directory of this repo.
 
 ## Contributing
 
@@ -63,4 +63,4 @@ Please try to create bug reports that are:
 
 This project is licensed under the **MIT license**. Feel free to edit and distribute this template as you like.
 
-See [LICENSE](LICENSE) for more information.
+See [LICENSE](https://github.com/cy-shriram/confluence-inline-comments/blob/master/LICENSE) for more information.
