@@ -46,7 +46,7 @@ In case of the table view, the table is pre-selected, so that you can copy (`Ctr
 
 ## Scripts
 
-The bookmarklets are based on javascripts. The scripts for the above bookmarlets can be found in the [/bookmarklets](https://github.com/cy-shriram/confluence-inline-comments/blob/master/bookmarklets/) directory of this repo.
+The bookmarklets are based on javascripts. The scripts for the above bookmarklets can be found in the [/bookmarklets](https://github.com/cy-shriram/confluence-inline-comments/blob/master/bookmarklets/) directory of this repo.
 
 ## Contributing
 
