@@ -204,10 +204,10 @@ javascript: (function() {
 
             var exit = false;
             var elem = a[i];
-            var text = "";
             do {
-                if (elem.previousElementSibling) {
-                    text += elem.previousElementSibling.tagName + " > ";
+                if (elem.tagName.toUpperCase().startsWith("H")) {
+                    exit = true;
+                } else if (elem.previousElementSibling) {
                     if (elem.previousElementSibling.tagName.toUpperCase().startsWith("H")) {
                         elem = elem.previousElementSibling;
                         exit = true;
