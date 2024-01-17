@@ -18,11 +18,13 @@ Getting a list of inline comments and the replies in confluence pages is a tedio
 
 1. Ensure that you have **Bookmarks bar** enabled in your browser and is visible. On Chrome `Ctrl + Shift + B` will toggle the visibility of the bookmarks bar.
 
-2. Go to the [Bookmarklets](#bookmarklets) section and choose which bookmarklet you need. Click on the link and then follow the instructions given there - **drag & drop** the bookmarklet to your bookmarks bar.
+2. From this page, scroll to the [Bookmarklets](#bookmarklets) section and choose which bookmarklet you need. Click on the link and then follow the instructions given there - **drag & drop** the bookmarklet to your bookmarks bar.
 
 ## Bookmarklets
 
 1. [Confluence Comments - List View](https://cy-shriram.github.io/confluence-inline-comments/html/confluence-comments-extractor-list.html)
+
+   Click on the above link and then follow the instructions given there - **drag & drop** the bookmarklet to your bookmarks bar.
 
    This produces a list of comments and their replies as shown in the image below. To install this bookmarklet, click on the above link.
 
@@ -31,6 +33,8 @@ Getting a list of inline comments and the replies in confluence pages is a tedio
    ![Figure 1](images/confluence_comments_list.png)
 
 2. [Confluence Comments - Table View](https://cy-shriram.github.io/confluence-inline-comments/html/confluence-comments-extractor-table.html)
+
+   Click on the above link and then follow the instructions given there - **drag & drop** the bookmarklet to your bookmarks bar.
 
    This produces a table of comments as shown in the image below. To install this bookmarklet, click on the above link.
 

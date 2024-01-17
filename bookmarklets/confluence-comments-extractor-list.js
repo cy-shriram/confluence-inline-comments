@@ -105,11 +105,11 @@ javascript: (function() {
     function process_open_comments(output_div) {
         a[i].click();
         setTimeout(function() {
-            const username_xpath = '//*[@id="content"]/div[9]/div/div[1]/div[3]/div[1]/a[2]';
-            const comment_xpath = '//*[@id="content"]/div[9]/div/div[1]/div[3]/div[2]/div';
-            const reply_container_xpath = '//*[@id="content"]/div[9]/div/div[2]/div';
-            const reply_username_xpath = '//*[@id="content"]/div[9]/div/div[2]/div/div[x]/div[1]/a[2]';
-            const reply_comment_xpath = '//*[@id="content"]/div[9]/div/div[2]/div/div[x]/div[2]/div';
+            const username_xpath = '//*[@id="content"]/div[6]/div/div[1]/div[3]/div[1]/a[2]';
+            const comment_xpath = '//*[@id="content"]/div[6]/div/div[1]/div[3]/div[2]/div';
+            const reply_container_xpath = '//*[@id="content"]/div[6]/div/div[2]/div';
+            const reply_username_xpath = '//*[@id="content"]/div[6]/div/div[2]/div/div[x]/div[1]/a[2]';
+            const reply_comment_xpath = '//*[@id="content"]/div[6]/div/div[2]/div/div[x]/div[2]/div';
 
             var username = document.evaluate(username_xpath, document).iterateNext().textContent;
             var comment = document.evaluate(comment_xpath, document).iterateNext().innerHTML;
